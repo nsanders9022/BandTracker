@@ -9,7 +9,7 @@
     <h3><a href="/band/@band.GetId()">@band.GetName()</a></h3>
 }
 
-<form action="venue/update" method="post">
+<form action="/venue/update/@Model.GetId()" method="post">
     <button type="Submit" name="button" class = "btn btn-warning">Update Venue Name</button>
 </form>
 
