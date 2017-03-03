@@ -153,6 +153,24 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void DeleteVenue_OneVenueDeletedFromDatabase_void()
+        {
+            //Arrange
+            Venue firstVenue = new Venue("Madison Square Garden");
+            Venue secondVenue = new Venue("Fifth Avenue Theater");
+            firstVenue.Save();
+            secondVenue.Save();
+
+            //Act
+            firstVenue.DeleteVenue();
+            List<Venue> result = Venue.GetAll();
+            List<Venue> verify = new List<Venue>{secondVenue};
+
+            //Assert
+            Assert.Equal(verify, result);
+        }
+
 
 
         public void Dispose()
