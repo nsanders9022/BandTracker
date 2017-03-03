@@ -53,6 +53,24 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        //tests that each instance is assigned corresponding db id
+        [Fact]
+        public void TestSave_AssignIdtoObject()
+        {
+            //Arrange
+            Band testBand = new Band("The Beatles");
+
+            //Act
+            testBand.Save();
+            Band savedBand = Band.GetAll()[0];
+
+            //Assert
+            int actualResult = savedBand.GetId();
+            int expectedResult = testBand.GetId();
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
         public void Dispose()
