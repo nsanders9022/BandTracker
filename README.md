@@ -92,7 +92,6 @@ This website lets the user view bands and the venues that they are playing at as
 * Example Input: "Madison Square Garden"
 * Example Output: "Madison Square Garden", `database-assigned id`
 
-
 **The GetBands method for the Venue class will return all the bands that have played at that .**
 * Example Input:
         > "The Beatles", id is 10  

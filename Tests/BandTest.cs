@@ -103,6 +103,19 @@ namespace BandTracker.Objects
             Assert.Equal(testBand, foundBand);
         }
 
+        [Fact]
+        public void GetVenues_FindsVenuesBandPlayedAt_List()
+        {
+            //Arrange
+            Band testBand = new Band("The Beatles");
+            List<Venue> allVenues = testBand.GetVenues();
+
+            //Assert
+            List<Venue> actualResult = allVenues;
+            List<Venue> expectedResult = new List<Venue>{};
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
         public void Dispose()
