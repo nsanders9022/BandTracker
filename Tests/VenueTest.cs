@@ -87,6 +87,20 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void Find_FindsVenueInDatabase_Venue()
+        {
+            //Arrange
+            Venue testVenue = new Venue("Madison Square Garden");
+            testVenue.Save();
+
+            //Act
+            Venue foundVenue = Venue.Find(testVenue.GetId());
+
+            //Assert
+            Assert.Equal(testVenue, foundVenue);
+        }
+
 
 
 
