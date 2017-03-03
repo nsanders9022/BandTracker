@@ -36,6 +36,22 @@ namespace BandTracker.Objects
             Assert.Equal(firstVenue, secondVenue);
         }
 
+        [Fact]
+        public void Test_Save_SavesToDatabase()
+        {
+            //Arrange
+            Venue newVenue = new Venue("Madison Square Garden");
+
+            //Act
+            newVenue.Save();
+
+            //Assert
+            List<Venue> actualResult = Venue.GetAll();
+            List<Venue> expectedResult = new List<Venue>{newVenue};
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
 
