@@ -2,7 +2,7 @@
   Layout="Shared/_Layout.cshtml";
 }
 
-<h2>Update name for @Model.GetName()</h2>
+<h2>Update name for <em>@Model.GetName()</em></h2>
 <form action="/venue/edit/@Model.GetId()" method="post">
   <input type="hidden" name="_method" value="PATCH">
   <input name="venue-id" type="hidden" value="@Model.GetId()">
