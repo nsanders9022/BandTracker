@@ -8,3 +8,10 @@
 {
     <h3><a href="/band/@band.GetId()">@band.GetName()</a></h3>
 }
+
+<h3>Add a new band</h3>
+<form action="/bands/new" method="post">
+    <label for="band-name">Band Name: </label>
+    <input type="text" name="band-name" id="band-name">
+    <button type="submit" name="button" class="btn btn-primary">Add</button>
+</form>
