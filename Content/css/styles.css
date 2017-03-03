@@ -1,3 +1,13 @@
+.banner {
+    background-image: url("https://images.sharefaith.com/images/3/1308865004650_1525/img_mouseover3.jpg");
+    height: 250px;
+    width: 100%;
+}
+
 h1 {
     text-align: center;
+}
+
+body {
+    background-color: #c5ddd5;
 }

@@ -18,27 +18,30 @@ else
     }
 }
 
-
-<h4>Add a band to this venue:</h4>
-<form action='/venue/add_band/@Model["venue"].GetId()' method='post'>
-  <input id='venue-id' name='venue-id' type='hidden' value='@Model["venue"].GetId()'>
-  <label for='band-id'>Select a band</label>
-  <select id='band-id' name='band-id' type='text'>
-    @foreach (var band in @Model["allBands"])
-    {
-      <option value='@band.GetId()'>@band.GetName()</option>
-    }
-  </select>
-  <button type='submit'>Add</button>
-</form>
-
-
-
-<form action='/venue/update/@Model["venue"].GetId()' method="post">
-    <button type="Submit" name="button" class = "btn btn-warning">Update venue name</button>
-</form>
-
-<form action='/venue/delete/@Model["venue"].GetId()' method="post">
-    <input type="hidden" name="_method" value="DELETE">
-    <button type="Submit" name="button" class = "btn btn-danger">Delete this venue</button>
-</form>
+<div class="row">
+    <div class="col-md-4">
+        <h4>Add a band to this venue:</h4>
+        <form action='/venue/add_band/@Model["venue"].GetId()' method='post'>
+            <input id='venue-id' name='venue-id' type='hidden' value='@Model["venue"].GetId()'>
+            <label for='band-id'>Select a band</label>
+            <select id='band-id' name='band-id' type='text'>
+                @foreach (var band in @Model["allBands"])
+                {
+                    <option value='@band.GetId()'>@band.GetName()</option>
+                }
+            </select>
+            <button type='submit'>Add</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form action='/venue/update/@Model["venue"].GetId()' method="post">
+            <button type="Submit" name="button" class = "btn btn-warning">Update venue name</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form action='/venue/delete/@Model["venue"].GetId()' method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="Submit" name="button" class = "btn btn-danger">Delete this venue</button>
+        </form>
+    </div>
+</div>

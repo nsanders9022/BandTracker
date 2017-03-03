@@ -9,16 +9,16 @@ This website lets the user view bands and the venues that they are playing at as
 
 #### Create Databases
 * In SQL
-\>CREATE DATABASE band_tracker
-\>GO
-\>USE band_tracker
-\>GO
-\>CREATE TABLE venues (id INT IDENTITY(1,1), name VARCHAR(255));
-\>GO
-\>CREATE TABLE bands (id INT IDENTITY(1,1), name VARCHAR(255));
-\>GO
-\>CREATE TABLE band_venue (id INT IDENTITY(1,1), band_id INT, venue_id INT);
-\>GO
+    * `> CREATE DATABASE band_tracker`
+    * `> GO`
+    * `> USE band_tracker`
+    * `> GO`
+    * `> CREATE TABLE venues (id INT IDENTITY(1,1), name VARCHAR(255));`
+    * `> GO`
+    * `> CREATE TABLE bands (id INT IDENTITY(1,1), name VARCHAR(255));`
+    * `> GO`
+    * `> CREATE TABLE band_venue (id INT IDENTITY(1,1), band_id INT, venue_id INT);`
+    * `> GO`
 * Requires DNU, DNX, MSSQL, and Mono
 * Clone to local machine
 * Use command "dnu restore" in command prompt/shell
