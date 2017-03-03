@@ -8,13 +8,13 @@
     </div>
     <div class="col-md-2">
         <form action='/venue/update/@Model["venue"].GetId()' method="post">
-            <button type="Submit" name="button" class = "btn btn-warning">Update venue name</button>
+            <button type="Submit" name="button" class = "btn btn-primary">Update venue name</button>
         </form>
     </div>
     <div class="col-md-2">
         <form action='/venue/delete/@Model["venue"].GetId()' method="post">
             <input type="hidden" name="_method" value="DELETE">
-            <button type="Submit" name="button" class = "btn btn-danger">Delete this venue</button>
+            <button type="Submit" name="button" class = "btn btn-primary">Delete this venue</button>
         </form>
     </div>
     <div class="col-md-4">
