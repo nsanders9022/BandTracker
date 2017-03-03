@@ -25,6 +25,17 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void Equals_TrueIfVenueNameIsSame_Bool()
+        {
+            //Arrange, Act
+            Venue firstVenue = new Venue("Madison Square Garden");
+            Venue secondVenue = new Venue("Madison Square Garden");
+
+            //Assert
+            Assert.Equal(firstVenue, secondVenue);
+        }
+
 
 
 
