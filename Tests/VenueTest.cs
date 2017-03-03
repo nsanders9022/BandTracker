@@ -69,6 +69,24 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void GetAll_AllVenues_ReturnsListOfVenues()
+        {
+            //Arrange
+            Venue firstVenue = new Venue("Madison Square Garden");
+            Venue secondVenue = new Venue("Fifth Avenue Theater");
+
+            //Act
+            firstVenue.Save();
+            secondVenue.Save();
+
+            //Assert
+            List<Venue> actualResult = Venue.GetAll();
+            List<Venue> expectedResult = new List<Venue>{firstVenue, secondVenue};
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
 
