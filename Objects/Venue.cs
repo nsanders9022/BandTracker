@@ -170,5 +170,21 @@ namespace BandTracker.Objects
             return bands;
         }
 
+        public void AddBand(Band band)
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO band_venue (band_id, venue_id) VALUES (@BandId, @VenueId);", conn);
+            cmd.Parameters.Add(new SqlParameter("@BandId", band.GetId()));
+            cmd.Parameters.Add(new SqlParameter("@VenueId", this.GetId()));
+
+            cmd.ExecuteNonQuery();
+
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
     }
 }
