@@ -116,6 +116,25 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void AddVenue_ForRowAddedToJoinTable_Row()
+        {
+            //Arrange
+            Band testBand = new Band("The Beatles");
+            testBand.Save();
+            Venue testVenue = new Venue("Madison Square Garden");
+            testVenue.Save();
+
+            //Act
+            testBand.AddVenue(testVenue);
+
+            //Assert
+            List<Venue> actualResult = testBand.GetVenues();
+            List<Venue> expectedResult = new List<Venue>{testVenue};
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
         public void Dispose()
