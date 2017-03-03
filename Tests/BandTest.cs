@@ -25,6 +25,17 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void Equals_TrueIfBandNameIsSame_Bool()
+        {
+            //Arrange, Act
+            Band firstBand = new Band("The Beatles");
+            Band secondBand = new Band("The Beatles");
+
+            //Assert
+            Assert.Equal(firstBand, secondBand);
+        }
+
 
 
         public void Dispose()
