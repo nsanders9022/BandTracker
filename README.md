@@ -40,14 +40,20 @@ This website lets the user view bands and the venues that they are playing at as
 
 **The Save method for the Band class will save new Bands to the database.**
 * Example Input:  
-\> New book: "The Beatles"
+\> New band: "The Beatles"
 * Example Output: no return value
 
 **The Save method for the Band class will assign an id to each new instance of the Band class.**
 * Example Input:  
-\> New book: "The Beatles", `local id: 0`  
+\> New band: "The Beatles", `local id: 0`  
 * Example Output:  
 \> "The Beatles", `database-assigned id`  
+
+**The GetAll() method for the Band class will return a list of all the bands in the band table.**
+* Example Input:
+\> New band: "The Beatles"
+\> New band: "Madonna"
+* Example Output: {The Beatles}, {Madonna}
 
 **The Find method for the Band class will return the Band as defined in the database.**
 * Example Input: "The Beatles"
@@ -73,12 +79,12 @@ This website lets the user view bands and the venues that they are playing at as
 
 **The Save method for the Venue class will save new Venues to the database.**
 * Example Input:  
-\> New book: "Madison Square Garden"
+\> New venue: "Madison Square Garden"
 * Example Output: no return value
 
 **The Save method for the Venue class will assign an id to each new instance of the Venue class.**
 * Example Input:  
-\> New book: "Madison Square Garden", `local id: 0`  
+\> New venue: "Madison Square Garden", `local id: 0`  
 * Example Output:  
 \> "The Beatles", `database-assigned id`  
 

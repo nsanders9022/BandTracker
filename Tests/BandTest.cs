@@ -55,7 +55,7 @@ namespace BandTracker.Objects
 
         //tests that each instance is assigned corresponding db id
         [Fact]
-        public void TestSave_AssignIdtoObject()
+        public void Save_AssignIdtoObject_int()
         {
             //Arrange
             Band testBand = new Band("The Beatles");
@@ -67,6 +67,24 @@ namespace BandTracker.Objects
             //Assert
             int actualResult = savedBand.GetId();
             int expectedResult = testBand.GetId();
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
+        [Fact]
+        public void GetAll_AllBands_ReturnsListOfBands()
+        {
+            //Arrange
+            Band firstBand = new Band("The Beatles");
+            Band secondBand = new Band("Madonna");
+
+            //Act
+            firstBand.Save();
+            secondBand.Save();
+
+            //Assert
+            List<Band> actualResult = Band.GetAll();
+            List<Band> expectedResult = new List<Band>{firstBand, secondBand};
 
             Assert.Equal(expectedResult, actualResult);
         }
