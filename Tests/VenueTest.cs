@@ -52,6 +52,23 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void Save_AssignIdtoObject_int()
+        {
+            //Arrange
+            Venue testVenue = new Venue("Madison Square Garden");
+
+            //Act
+            testVenue.Save();
+            Venue savedVenue = Venue.GetAll()[0];
+
+            //Assert
+            int actualResult = savedVenue.GetId();
+            int expectedResult = testVenue.GetId();
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
 
