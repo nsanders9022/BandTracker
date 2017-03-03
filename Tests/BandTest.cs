@@ -89,11 +89,26 @@ namespace BandTracker.Objects
             Assert.Equal(expectedResult, actualResult);
         }
 
+        [Fact]
+        public void Find_FindsBandInDatabase_Band()
+        {
+            //Arrange
+            Band testBand = new Band("The Beatles");
+            testBand.Save();
+
+            //Act
+            Band foundBand = Band.Find(testBand.GetId());
+
+            //Assert
+            Assert.Equal(testBand, foundBand);
+        }
+
 
 
         public void Dispose()
         {
             Band.DeleteAll();
+            Venue.DeleteAll();
         }
 
     }

@@ -136,7 +136,6 @@ namespace BandTracker.Objects
             {
                 conn.Close();
             }
-
             return foundBand;
         }
 
