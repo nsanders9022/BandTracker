@@ -101,6 +101,19 @@ namespace BandTracker.Objects
             Assert.Equal(testVenue, foundVenue);
         }
 
+        [Fact]
+        public void GetBands_FindsBandsThatPlayedAtVenue_List()
+        {
+            //Arrange
+            Venue testVenue = new Venue("Madison Square Garden");
+            List<Band> allBands = testVenue.GetBands();
+
+            //Assert
+            List<Band> actualResult = allBands;
+            List<Band> expectedResult = new List<Band>{};
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
 
