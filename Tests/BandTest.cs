@@ -36,6 +36,23 @@ namespace BandTracker.Objects
             Assert.Equal(firstBand, secondBand);
         }
 
+        //tests if instances are saved to db
+        [Fact]
+        public void Test_Save_SavesToDatabase()
+        {
+            //Arrange
+            Band newBand = new Band("The Beatles");
+
+            //Act
+            newBand.Save();
+
+            //Assert
+            List<Band> actualResult = Band.GetAll();
+            List<Band> expectedResult = new List<Band>{newBand};
+
+            Assert.Equal(expectedResult, actualResult);
+        }
+
 
 
         public void Dispose()
