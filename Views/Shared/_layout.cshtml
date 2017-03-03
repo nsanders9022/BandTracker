@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Band Tracker</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-  </head>
-  <body>
+</head>
+<link rel="stylesheet" href="/Content/css/styles.css">
+<body>
     <div class="banner">
-      <h1 class="header"></h1>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Band Tracker</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/bands">All Bands</a></li>
+                    <li><a href="/venues">All Venues</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="header"></h1>
     </div>
     <div class="container">
-    @RenderBody()
-  </div>
-  </body>
+        @RenderBody()
+    </div>
+</body>
 </html>
