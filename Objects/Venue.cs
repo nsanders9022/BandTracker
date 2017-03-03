@@ -144,7 +144,7 @@ namespace BandTracker.Objects
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT bands.* FROM venues JOIN band_venue ON (venues.id = band_venue.venue_id) JOIN bands ON (band_venue.band_id = bands.id) WHERE venues.id = @VenueId;", conn);
+            SqlCommand cmd = new SqlCommand("SELECT bands.* FROM venues JOIN bands_venues ON (venues.id = bands_venues.venue_id) JOIN bands ON (bands_venues.band_id = bands.id) WHERE venues.id = @VenueId;", conn);
             cmd.Parameters.Add(new SqlParameter("@VenueId", this.GetId().ToString()));
 
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -175,7 +175,7 @@ namespace BandTracker.Objects
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO band_venue (band_id, venue_id) VALUES (@BandId, @VenueId);", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO bands_venues (band_id, venue_id) VALUES (@BandId, @VenueId);", conn);
             cmd.Parameters.Add(new SqlParameter("@BandId", band.GetId()));
             cmd.Parameters.Add(new SqlParameter("@VenueId", this.GetId()));
 
